@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  postgres:
+    container_name: threads-db
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - portgres_data:/var/lib/portgresql/data
+    environment:
+      POSTGRES_USER: threads
+      POSTGRES_PASSWORD: threads
+      POSTGRES_DB: threads
+
+volumes:
+  portgres_data:
